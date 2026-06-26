@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benedictus Lionel Bisma Anugerah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+header{
+    background:#0f172a;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    color:white;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    padding:20px;
+}
+
+.hero img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #d4af37;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:600px;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.btn{
+    background:#d4af37;
+    color:#0f172a;
+    padding:12px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c49a2a;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#d4af37;
+    border:2px solid #d4af37;
+    padding:10px 28px;
+}
+
+.btn-outline:hover{
+    background:#d4af37;
+    color:#0f172a;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2rem;
+}
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.skill{
+    background:#0f172a;
+    color:white;
+    padding:10px 20px;
+    border-radius:30px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">Benedictus Bisma</div>
+
+<ul>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#education">Pendidikan</a></li>
+<li><a href="#experience">Organisasi</a></li>
+<li><a href="#skills">Keahlian</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+
+<img src="FOTO.jpeg" alt="Foto Profil">
+
+<h1>Benedictus Lionel Bisma Anugerah</h1>
+
+<h2>Mahasiswa Ilmu Hukum</h2>
+
+<p>
+Tertarik pada Hukum Perdata, Hukum Bisnis,
+Penelitian Hukum, serta Pengembangan Argumentasi Hukum.
+</p>
+
+<div class="hero-buttons">
+<a href="CV.pdf" class="btn">CV</a>
+<a href="certifications.html" class="btn btn-outline">Certifications</a>
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">Tentang Saya</h2>
+
+<div class="about">
+Saya adalah mahasiswa Ilmu Hukum yang memiliki minat
+dalam bidang hukum perdata, hukum bisnis, dan penelitian hukum.
+Saya aktif mengembangkan kemampuan legal research,
+legal writing, serta analisis kasus hukum melalui kegiatan akademik
+maupun organisasi.
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Pendidikan</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>S1 Ilmu Hukum</h3>
+<p>Universitas Sebelas Maret</p>
+<p>2025 - Sekarang</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Organisasi & Pengalaman</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Mahasiswa Fakultas Hukum</h3>
+<p>Mengikuti kegiatan akademik dan pengembangan kemampuan hukum.</p>
+</div>
+
+<div class="card">
+<h3>Seminar dan Pelatihan</h3>
+<p>Aktif mengikuti seminar hukum, legal drafting, dan diskusi akademik.</p>
+</div>
+
+<div class="card">
+<h3>Penelitian Hukum</h3>
+<p>Menyusun analisis hukum dan kajian terhadap isu-isu hukum kontemporer.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Keahlian</h2>
+
+<div class="skills">
+
+<div class="skill">Teamwork</div>
+<div class="skill">Discipline</div>
+<div class="skill">Communication</div>
+<div class="skill">Adaptability</div>
+<div class="skill">Canva</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Kontak</h2>
+
+<div class="contact">
+<p>📧 benedictusbisma11@gmail.com</p>
+<p>📱 +62811188596</p>
+<p>📷 Instagram: @bismabeneduc</p>
+<p>💼 LinkedIn: https://www.linkedin.com/in/benedictus-bisma</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Benedictus Lionel Bisma Anugerah
+</footer>
+
+</body>
+</html>
