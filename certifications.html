@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sertifikasi | Benedictus Lionel Bisma Anugerah</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+header{
+    background:#0f172a;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    color:white;
+    font-size:1.2rem;
+    font-weight:700;
+    text-decoration:none;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.page-hero{
+    padding:160px 10% 60px;
+    text-align:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+.page-hero h1{
+    font-size:2.2rem;
+    margin-bottom:10px;
+}
+
+.page-hero p{
+    color:#cbd5e1;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.cert-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.25s;
+    border:1px solid transparent;
+}
+
+.cert-card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
+}
+
+.cert-card .badge{
+    display:inline-block;
+    background:#0f172a;
+    color:#d4af37;
+    font-size:.75rem;
+    font-weight:600;
+    padding:5px 14px;
+    border-radius:30px;
+    margin-bottom:14px;
+}
+
+.cert-card h3{
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.cert-card p{
+    color:#475569;
+    font-size:.95rem;
+    margin-bottom:4px;
+}
+
+.cert-card .view-link{
+    margin-top:14px;
+    color:#b8860b;
+    font-weight:600;
+    font-size:.9rem;
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:30px;
+    color:#0f172a;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.back-link:hover{
+    color:#b8860b;
+}
+
+/* Modal */
+.modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.75);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    border-radius:18px;
+    max-width:560px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:35px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:#0f172a;
+    color:white;
+    border:none;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+.modal-close:hover{
+    background:#b8860b;
+}
+
+.modal-box h2{
+    color:#0f172a;
+    margin-bottom:4px;
+}
+
+.modal-box .modal-sub{
+    color:#b8860b;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.modal-box .info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid #e2e8f0;
+    font-size:.95rem;
+}
+
+.modal-box .info-row span:first-child{
+    color:#64748b;
+}
+
+.modal-box .info-row span:last-child{
+    font-weight:600;
+    color:#1e293b;
+}
+
+.score-table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    font-size:.9rem;
+}
+
+.score-table th, .score-table td{
+    padding:8px 10px;
+    text-align:left;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.score-table th{
+    background:#f1f5f9;
+    color:#0f172a;
+}
+
+.predikat-tag{
+    display:inline-block;
+    background:#d4af37;
+    color:#0f172a;
+    font-weight:700;
+    padding:4px 14px;
+    border-radius:20px;
+    margin-top:6px;
+}
+
+.modal-actions{
+    margin-top:25px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    background:#d4af37;
+    color:#0f172a;
+    padding:10px 24px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    font-size:.9rem;
+}
+
+.btn:hover{
+    background:#c49a2a;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#0f172a;
+    border:2px solid #0f172a;
+    padding:8px 22px;
+}
+
+.btn-outline:hover{
+    background:#0f172a;
+    color:white;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html" class="logo">Benedictus Bisma</a>
+
+<ul>
+<li><a href="index.html#about">Tentang</a></li>
+<li><a href="index.html#education">Pendidikan</a></li>
+<li><a href="index.html#experience">Organisasi</a></li>
+<li><a href="index.html#skills">Keahlian</a></li>
+<li><a href="index.html#contact">Kontak</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="page-hero">
+<h1>Sertifikasi</h1>
+<p>Kumpulan sertifikat yang telah saya peroleh.</p>
+</section>
+
+<section>
+
+<a href="index.html" class="back-link">&larr; Kembali ke Beranda</a>
+
+<div class="cards">
+
+<div class="cert-card" onclick="openModal('ukbi')">
+<span class="badge">Bahasa</span>
+<h3>Uji Kemahiran Berbahasa Indonesia (UKBI)</h3>
+<p>Badan Pengembangan dan Pembinaan Bahasa</p>
+<p>Skor: 726 — Predikat Istimewa</p>
+<div class="view-link">Lihat sertifikat &rarr;</div>
+</div>
+
+<div class="cert-card" onclick="openModal('toefl')">
+<span class="badge">Bahasa</span>
+<h3>TOEFL — Test of English as a Foreign Language</h3>
+<p>Global Operation Indonesia</p>
+<p>Skor Total: 590 (Range 217–677)</p>
+<div class="view-link">Lihat sertifikat &rarr;</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Benedictus Lionel Bisma Anugerah
+</footer>
+
+<!-- UKBI Modal -->
+<div class="modal-overlay" id="modal-ukbi">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('ukbi')">✕</button>
+
+<h2>Sertifikat UKBI</h2>
+<div class="modal-sub">Uji Kemahiran Berbahasa Indonesia</div>
+
+<div class="info-row"><span>Nomor Sertifikat</span><span>SD-BB-1304285</span></div>
+<div class="info-row"><span>Nama</span><span>Benedictus Lionel Bisma Anugerah</span></div>
+<div class="info-row"><span>Terdaftar sebagai</span><span>Pelajar SMA</span></div>
+<div class="info-row"><span>Tanggal Terbit</span><span>22 Juni 2026</span></div>
+<div class="info-row"><span>Berlaku sampai</span><span>22 Juni 2028</span></div>
+<div class="info-row"><span>Skor</span><span>726</span></div>
+
+<div class="predikat-tag">Predikat: Istimewa</div>
+
+<table class="score-table">
+<tr><th>Seksi</th><th>Skor</th></tr>
+<tr><td>Mendengarkan</td><td>680</td></tr>
+<tr><td>Merespons Kaidah</td><td>728</td></tr>
+<tr><td>Membaca</td><td>770</td></tr>
+</table>
+
+<div class="modal-actions">
+<a href="sertifikat-ukbi.pdf" target="_blank" class="btn">Lihat PDF Lengkap</a>
+<a href="sertifikat-ukbi.pdf" download class="btn btn-outline">Unduh</a>
+</div>
+
+</div>
+</div>
+
+<!-- TOEFL Modal -->
+<div class="modal-overlay" id="modal-toefl">
+<div class="modal-box">
+<button class="modal-close" onclick="closeModal('toefl')">✕</button>
+
+<h2>Sertifikat TOEFL</h2>
+<div class="modal-sub">Test of English as a Foreign Language</div>
+
+<div class="info-row"><span>Penyelenggara</span><span>Global Operation Indonesia</span></div>
+<div class="info-row"><span>No. Registrasi</span><span>GO/15/4182/11/2025</span></div>
+<div class="info-row"><span>Nama</span><span>Benedictus Lionel Bisma Anugerah</span></div>
+<div class="info-row"><span>Tanggal Terbit</span><span>15 November 2025</span></div>
+<div class="info-row"><span>Berlaku</span><span>2 tahun sejak tanggal terbit</span></div>
+<div class="info-row"><span>Skor Total</span><span>590</span></div>
+
+<div class="predikat-tag">Range Skor: 217 – 677</div>
+
+<table class="score-table">
+<tr><th>Bagian</th><th>Skor</th></tr>
+<tr><td>Listening Comprehension</td><td>630</td></tr>
+<tr><td>Structure & Written Expression</td><td>540</td></tr>
+<tr><td>Reading Comprehension</td><td>600</td></tr>
+</table>
+
+<div class="modal-actions">
+<a href="sertifikat-toefl.pdf" target="_blank" class="btn">Lihat PDF Lengkap</a>
+<a href="sertifikat-toefl.pdf" download class="btn btn-outline">Unduh</a>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openModal(id){
+    document.getElementById('modal-' + id).classList.add('active');
+}
+
+function closeModal(id){
+    document.getElementById('modal-' + id).classList.remove('active');
+}
+
+document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){
+        if(e.target === overlay){
+            overlay.classList.remove('active');
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
